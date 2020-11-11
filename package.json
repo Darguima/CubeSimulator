@@ -2,7 +2,6 @@
   "name": "cubesimulator",
   "version": "1.0.0",
   "description": "A Node JS script to create a virtual Rubik's Cube - represented in the script by a class",
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Darguima/CubeSimulator.git"
@@ -19,9 +18,19 @@
   "bugs": {
     "url": "https://github.com/Darguima/CubeSimulator/issues"
   },
-
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.5"
   }
 }

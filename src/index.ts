@@ -589,12 +589,14 @@ Face 1                Face 3                 Face 5                 Face 6
       this.moveY(3)
     }
   }
+
+  moves (movements: string) {
+    const moves: Array<string> = movements.split(' ')
+
+    console.log(moves)
+
+    moves.map(item => (this.move(item)))
+  }
 }
 
 export default Cube
-
-const cube = new Cube()
-
-cube.move('Y2')
-
-console.log(cube.printCube)

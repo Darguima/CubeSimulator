@@ -76,602 +76,517 @@ Face 1                Face 3                 Face 5                 Face 6
     `
   }
 
-  private moveM () {
-    let swap: string
+  private moveM (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      let swap: string
 
-    // Corners
-    swap = this.cube[2][0][1]
-    this.cube[2][0][1] = this.cube[1][0][1]
-    this.cube[1][0][1] = this.cube[5][0][1]
-    this.cube[5][0][1] = this.cube[3][0][1]
-    this.cube[3][0][1] = swap
+      swap = this.cube[2][0][1]
+      this.cube[2][0][1] = this.cube[1][0][1]
+      this.cube[1][0][1] = this.cube[5][2][1]
+      this.cube[5][2][1] = this.cube[3][0][1]
+      this.cube[3][0][1] = swap
 
-    // Middles
-    swap = this.cube[2][1][1]
-    this.cube[2][1][1] = this.cube[1][1][1]
-    this.cube[1][1][1] = this.cube[5][1][1]
-    this.cube[5][1][1] = this.cube[3][1][1]
-    this.cube[3][1][1] = swap
+      swap = this.cube[2][1][1]
+      this.cube[2][1][1] = this.cube[1][1][1]
+      this.cube[1][1][1] = this.cube[5][1][1]
+      this.cube[5][1][1] = this.cube[3][1][1]
+      this.cube[3][1][1] = swap
 
-    // Corners
-    swap = this.cube[2][2][1]
-    this.cube[2][2][1] = this.cube[1][2][1]
-    this.cube[1][2][1] = this.cube[5][2][1]
-    this.cube[5][2][1] = this.cube[3][2][1]
-    this.cube[3][2][1] = swap
+      swap = this.cube[2][2][1]
+      this.cube[2][2][1] = this.cube[1][2][1]
+      this.cube[1][2][1] = this.cube[5][0][1]
+      this.cube[5][0][1] = this.cube[3][2][1]
+      this.cube[3][2][1] = swap
+    }
   }
 
-  private moveM2 () {
-    let swap: string
+  private moveE (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      let swap: string
 
-    // Corners
-    swap = this.cube[2][0][1]
-    this.cube[2][0][1] = this.cube[5][2][1]
-    this.cube[5][2][1] = swap
+      // Corners
+      swap = this.cube[2][1][0]
+      this.cube[2][1][0] = this.cube[0][1][0]
+      this.cube[0][1][0] = this.cube[5][1][0]
+      this.cube[5][1][0] = this.cube[4][1][0]
+      this.cube[4][1][0] = swap
 
-    swap = this.cube[1][0][1]
-    this.cube[1][0][1] = this.cube[3][0][1]
-    this.cube[3][0][1] = swap
+      // Middles
+      swap = this.cube[2][1][1]
+      this.cube[2][1][1] = this.cube[0][1][1]
+      this.cube[0][1][1] = this.cube[5][1][1]
+      this.cube[5][1][1] = this.cube[4][1][1]
+      this.cube[4][1][1] = swap
 
-    // Middles
-    swap = this.cube[2][1][1]
-    this.cube[2][1][1] = this.cube[5][1][1]
-    this.cube[5][1][1] = swap
-
-    swap = this.cube[2][1][1]
-    this.cube[2][1][1] = this.cube[3][1][1]
-    this.cube[3][1][1] = swap
-
-    // Corners
-    swap = this.cube[2][2][1]
-    this.cube[2][2][1] = this.cube[5][0][1]
-    this.cube[5][0][1] = swap
-
-    swap = this.cube[1][2][1]
-    this.cube[1][2][1] = this.cube[3][2][1]
-    this.cube[3][2][1] = swap
+      // Corners
+      swap = this.cube[2][1][2]
+      this.cube[2][1][2] = this.cube[0][1][2]
+      this.cube[0][1][2] = this.cube[5][1][2]
+      this.cube[5][1][2] = this.cube[4][1][2]
+      this.cube[4][1][2] = swap
+    }
   }
 
-  private moveM3 () {
-    let swap: string
+  private moveS (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      let swap: string
 
-    // Corners
-    swap = this.cube[2][0][1]
-    this.cube[2][0][1] = this.cube[3][0][1]
-    this.cube[3][0][1] = this.cube[5][0][1]
-    this.cube[5][0][1] = this.cube[1][0][1]
-    this.cube[1][0][1] = swap
+      // Corners
+      swap = this.cube[4][0][1]
+      this.cube[4][0][1] = this.cube[1][1][0]
+      this.cube[1][1][0] = this.cube[0][2][1]
+      this.cube[0][2][1] = this.cube[3][1][2]
+      this.cube[3][1][2] = swap
 
-    // Middles
-    swap = this.cube[2][1][1]
-    this.cube[2][1][1] = this.cube[3][1][1]
-    this.cube[3][1][1] = this.cube[5][1][1]
-    this.cube[5][1][1] = this.cube[1][1][1]
-    this.cube[1][1][1] = swap
+      // Middles
+      swap = this.cube[4][1][1]
+      this.cube[4][1][1] = this.cube[1][1][1]
+      this.cube[1][1][1] = this.cube[0][1][1]
+      this.cube[0][1][1] = this.cube[3][1][1]
+      this.cube[3][1][1] = swap
 
-    // Corners
-    swap = this.cube[2][2][1]
-    this.cube[2][2][1] = this.cube[3][2][1]
-    this.cube[3][2][1] = this.cube[5][2][1]
-    this.cube[5][2][1] = this.cube[1][2][1]
-    this.cube[1][2][1] = swap
+      // Corners
+      swap = this.cube[4][2][1]
+      this.cube[4][2][1] = this.cube[1][1][2]
+      this.cube[1][1][2] = this.cube[0][0][1]
+      this.cube[0][0][1] = this.cube[3][1][0]
+      this.cube[3][1][0] = swap
+    }
   }
 
-  private moveE () {
-    let swap: string
+  private moveU (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      let swap: string
 
-    // Corners
-    swap = this.cube[2][1][0]
-    this.cube[2][1][0] = this.cube[0][1][0]
-    this.cube[0][1][0] = this.cube[5][1][0]
-    this.cube[5][1][0] = this.cube[4][1][0]
-    this.cube[4][1][0] = swap
+      // Corners
 
-    // Middles
-    swap = this.cube[2][1][1]
-    this.cube[2][1][1] = this.cube[0][1][1]
-    this.cube[0][1][1] = this.cube[5][1][1]
-    this.cube[5][1][1] = this.cube[4][1][1]
-    this.cube[4][1][1] = swap
+      swap = this.cube[1][0][0]
+      this.cube[1][0][0] = this.cube[1][2][0]
+      this.cube[1][2][0] = this.cube[1][2][2]
+      this.cube[1][2][2] = this.cube[1][0][2]
+      this.cube[1][0][2] = swap
 
-    // Corners
-    swap = this.cube[2][1][2]
-    this.cube[2][1][2] = this.cube[0][1][2]
-    this.cube[0][1][2] = this.cube[5][1][2]
-    this.cube[5][1][2] = this.cube[4][1][2]
-    this.cube[4][1][2] = swap
+      // Middles
+
+      swap = this.cube[1][0][1]
+      this.cube[1][0][1] = this.cube[1][1][0]
+      this.cube[1][1][0] = this.cube[1][2][1]
+      this.cube[1][2][1] = this.cube[1][1][2]
+      this.cube[1][1][2] = swap
+
+      // Corners on other faces
+
+      swap = this.cube[5][0][2]
+      this.cube[5][0][2] = this.cube[0][0][2]
+      this.cube[0][0][2] = this.cube[2][0][2]
+      this.cube[2][0][2] = this.cube[4][0][2]
+      this.cube[4][0][2] = swap
+
+      swap = this.cube[5][0][0]
+      this.cube[5][0][0] = this.cube[0][0][0]
+      this.cube[0][0][0] = this.cube[2][0][0]
+      this.cube[2][0][0] = this.cube[4][0][0]
+      this.cube[4][0][0] = swap
+
+      // Middles on other faces
+
+      swap = this.cube[5][0][1]
+      this.cube[5][0][1] = this.cube[0][0][1]
+      this.cube[0][0][1] = this.cube[2][0][1]
+      this.cube[2][0][1] = this.cube[4][0][1]
+      this.cube[4][0][1] = swap
+    }
   }
 
-  private moveE2 () {
-    let swap: string
+  private moveUw (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      this.moveU(1)
 
-    // Corners
-    swap = this.cube[2][1][0]
-    this.cube[2][1][0] = this.cube[5][1][0]
-    this.cube[5][1][0] = swap
-
-    swap = this.cube[0][1][0]
-    this.cube[0][1][0] = this.cube[4][1][0]
-    this.cube[4][1][0] = swap
-
-    // Middles
-    swap = this.cube[2][1][1]
-    this.cube[2][1][1] = this.cube[5][1][1]
-    this.cube[5][1][1] = swap
-
-    swap = this.cube[0][1][1]
-    this.cube[0][1][1] = this.cube[4][1][1]
-    this.cube[4][1][1] = swap
-
-    // Corners
-    swap = this.cube[2][1][2]
-    this.cube[2][1][2] = this.cube[5][1][2]
-    this.cube[5][1][2] = swap
-
-    swap = this.cube[0][1][2]
-    this.cube[0][1][2] = this.cube[4][1][2]
-    this.cube[4][1][2] = swap
+      this.moveE(3)
+    }
   }
 
-  private moveE3 () {
-    let swap: string
+  private moveD (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      let swap: string
 
-    // Corners
-    swap = this.cube[2][1][0]
-    this.cube[2][1][0] = this.cube[4][1][0]
-    this.cube[4][1][0] = this.cube[5][1][0]
-    this.cube[5][1][0] = this.cube[0][1][0]
-    this.cube[0][1][0] = swap
+      // Corners
 
-    // Middles
-    swap = this.cube[2][1][1]
-    this.cube[2][1][1] = this.cube[4][1][1]
-    this.cube[4][1][1] = this.cube[5][1][1]
-    this.cube[5][1][1] = this.cube[0][1][1]
-    this.cube[0][1][1] = swap
+      swap = this.cube[3][0][0]
+      this.cube[3][0][0] = this.cube[3][2][0]
+      this.cube[3][2][0] = this.cube[3][2][2]
+      this.cube[3][2][2] = this.cube[3][0][2]
+      this.cube[3][0][2] = swap
 
-    // Corners
-    swap = this.cube[2][1][2]
-    this.cube[2][1][2] = this.cube[4][1][2]
-    this.cube[4][1][2] = this.cube[5][1][2]
-    this.cube[5][1][2] = this.cube[0][1][2]
-    this.cube[0][1][2] = swap
+      // Middles
+
+      swap = this.cube[3][0][1]
+      this.cube[3][0][1] = this.cube[3][1][0]
+      this.cube[3][1][0] = this.cube[3][2][1]
+      this.cube[3][2][1] = this.cube[3][1][2]
+      this.cube[3][1][2] = swap
+
+      // Corners on other faces
+
+      swap = this.cube[5][2][0]
+      this.cube[5][2][0] = this.cube[4][2][0]
+      this.cube[4][2][0] = this.cube[2][2][0]
+      this.cube[2][2][0] = this.cube[0][2][0]
+      this.cube[0][2][0] = swap
+
+      swap = this.cube[5][2][2]
+      this.cube[5][2][2] = this.cube[4][2][2]
+      this.cube[4][2][2] = this.cube[2][2][2]
+      this.cube[2][2][2] = this.cube[0][2][2]
+      this.cube[0][2][2] = swap
+
+      // Middles on other faces
+
+      swap = this.cube[5][2][1]
+      this.cube[5][2][1] = this.cube[4][2][1]
+      this.cube[4][2][1] = this.cube[2][2][1]
+      this.cube[2][2][1] = this.cube[0][2][1]
+      this.cube[0][2][1] = swap
+    }
   }
 
-  private moveS () {
-    let swap: string
+  private moveDw (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      this.moveD(1)
 
-    // Corners
-    swap = this.cube[4][0][1]
-    this.cube[4][0][1] = this.cube[1][1][0]
-    this.cube[1][1][0] = this.cube[0][2][1]
-    this.cube[0][2][1] = this.cube[3][1][2]
-    this.cube[3][1][2] = swap
-
-    // Middles
-    swap = this.cube[4][1][1]
-    this.cube[4][1][1] = this.cube[1][1][1]
-    this.cube[1][1][1] = this.cube[0][1][1]
-    this.cube[0][1][1] = this.cube[3][1][1]
-    this.cube[3][1][1] = swap
-
-    // Corners
-    swap = this.cube[4][2][1]
-    this.cube[4][2][1] = this.cube[1][1][2]
-    this.cube[1][1][2] = this.cube[0][0][1]
-    this.cube[0][0][1] = this.cube[3][1][0]
-    this.cube[3][1][0] = swap
+      this.moveE(1)
+    }
   }
 
-  private moveS2 () {
-    let swap: string
+  private moveF (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      let swap: string
 
-    // Corners
-    swap = this.cube[4][0][1]
-    this.cube[4][0][1] = this.cube[0][2][1]
-    this.cube[0][2][1] = swap
+      // Corners
 
-    swap = this.cube[1][1][0]
-    this.cube[1][1][0] = this.cube[3][1][2]
-    this.cube[3][1][2] = swap
+      swap = this.cube[2][0][0]
+      this.cube[2][0][0] = this.cube[2][2][0]
+      this.cube[2][2][0] = this.cube[2][2][2]
+      this.cube[2][2][2] = this.cube[2][0][2]
+      this.cube[2][0][2] = swap
 
-    // Middles
-    swap = this.cube[4][1][1]
-    this.cube[4][1][1] = this.cube[0][1][1]
-    this.cube[0][1][1] = swap
+      // Middles
 
-    swap = this.cube[1][1][1]
-    this.cube[1][1][1] = this.cube[3][1][1]
-    this.cube[3][1][1] = swap
+      swap = this.cube[2][0][1]
+      this.cube[2][0][1] = this.cube[2][1][0]
+      this.cube[2][1][0] = this.cube[2][2][1]
+      this.cube[2][2][1] = this.cube[2][1][2]
+      this.cube[2][1][2] = swap
 
-    // Corners
-    swap = this.cube[4][2][1]
-    this.cube[4][2][1] = this.cube[0][0][1]
-    this.cube[0][0][1] = swap
+      // Corners on other faces
 
-    swap = this.cube[1][1][2]
-    this.cube[1][1][2] = this.cube[3][1][0]
-    this.cube[3][1][0] = swap
+      swap = this.cube[1][2][0]
+      this.cube[1][2][0] = this.cube[0][2][2]
+      this.cube[0][2][2] = this.cube[3][0][2]
+      this.cube[3][0][2] = this.cube[4][0][0]
+      this.cube[4][0][0] = swap
+
+      swap = this.cube[1][2][2]
+      this.cube[1][2][2] = this.cube[0][0][2]
+      this.cube[0][0][2] = this.cube[3][0][0]
+      this.cube[3][0][0] = this.cube[4][2][0]
+      this.cube[4][2][0] = swap
+
+      // Middles on other faces
+
+      swap = this.cube[1][2][1]
+      this.cube[1][2][1] = this.cube[0][1][2]
+      this.cube[0][1][2] = this.cube[3][0][1]
+      this.cube[3][0][1] = this.cube[4][1][0]
+      this.cube[4][1][0] = swap
+    }
   }
 
-  private moveS3 () {
-    let swap: string
+  private moveFw (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      this.moveF(1)
 
-    // Corners
-    swap = this.cube[4][0][1]
-    this.cube[4][0][1] = this.cube[3][1][2]
-    this.cube[3][1][2] = this.cube[0][2][1]
-    this.cube[0][2][1] = this.cube[1][1][0]
-    this.cube[1][1][0] = swap
-
-    // Middles
-    swap = this.cube[4][1][1]
-    this.cube[4][1][1] = this.cube[3][1][1]
-    this.cube[3][1][1] = this.cube[0][1][1]
-    this.cube[0][1][1] = this.cube[1][1][1]
-    this.cube[1][1][1] = swap
-
-    // Corners
-    swap = this.cube[4][2][1]
-    this.cube[4][2][1] = this.cube[3][1][0]
-    this.cube[3][1][0] = this.cube[0][0][1]
-    this.cube[0][0][1] = this.cube[1][1][2]
-    this.cube[1][1][2] = swap
+      this.moveS(1)
+    }
   }
 
-  private moveU1 () {
-    let swap: string
+  private moveR (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      let swap: string
 
-    // Corners on the D Face
+      // Corners
 
-    swap = this.cube[1][0][0]
-    this.cube[1][0][0] = this.cube[1][2][0]
-    this.cube[1][2][0] = this.cube[1][2][2]
-    this.cube[1][2][2] = this.cube[1][0][2]
-    this.cube[1][0][2] = swap
+      swap = this.cube[4][0][0]
+      this.cube[4][0][0] = this.cube[4][2][0]
+      this.cube[4][2][0] = this.cube[4][2][2]
+      this.cube[4][2][2] = this.cube[4][0][2]
+      this.cube[4][0][2] = swap
 
-    // Middles on the U Face
+      // Middles
 
-    swap = this.cube[1][0][1]
-    this.cube[1][0][1] = this.cube[1][1][0]
-    this.cube[1][1][0] = this.cube[1][2][1]
-    this.cube[1][2][1] = this.cube[1][1][2]
-    this.cube[1][1][2] = swap
+      swap = this.cube[4][0][1]
+      this.cube[4][0][1] = this.cube[4][1][0]
+      this.cube[4][1][0] = this.cube[4][2][1]
+      this.cube[4][2][1] = this.cube[4][1][2]
+      this.cube[4][1][2] = swap
 
-    // Corners on other faces
+      // Corners on other faces
 
-    swap = this.cube[5][0][2]
-    this.cube[5][0][2] = this.cube[0][0][2]
-    this.cube[0][0][2] = this.cube[2][0][2]
-    this.cube[2][0][2] = this.cube[4][0][2]
-    this.cube[4][0][2] = swap
+      swap = this.cube[2][0][2]
+      this.cube[2][0][2] = this.cube[3][0][2]
+      this.cube[3][0][2] = this.cube[5][2][0]
+      this.cube[5][2][0] = this.cube[1][0][2]
+      this.cube[1][0][2] = swap
 
-    swap = this.cube[5][0][0]
-    this.cube[5][0][0] = this.cube[0][0][0]
-    this.cube[0][0][0] = this.cube[2][0][0]
-    this.cube[2][0][0] = this.cube[4][0][0]
-    this.cube[4][0][0] = swap
+      swap = this.cube[2][2][2]
+      this.cube[2][2][2] = this.cube[3][2][2]
+      this.cube[3][2][2] = this.cube[5][0][0]
+      this.cube[5][0][0] = this.cube[1][2][2]
+      this.cube[1][2][2] = swap
 
-    // Middles on other faces
+      // Middles on other faces
 
-    swap = this.cube[5][0][1]
-    this.cube[5][0][1] = this.cube[0][0][1]
-    this.cube[0][0][1] = this.cube[2][0][1]
-    this.cube[2][0][1] = this.cube[4][0][1]
-    this.cube[4][0][1] = swap
+      swap = this.cube[2][1][2]
+      this.cube[2][1][2] = this.cube[3][1][2]
+      this.cube[3][1][2] = this.cube[5][1][0]
+      this.cube[5][1][0] = this.cube[1][1][2]
+      this.cube[1][1][2] = swap
+    }
   }
 
-  private moveU2 () {
-    let swap: string
+  private moveRw (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      this.moveR(1)
 
-    // Corners on the U Face
-
-    swap = this.cube[1][0][0]
-    this.cube[1][0][0] = this.cube[1][2][2]
-    this.cube[1][2][2] = swap
-
-    swap = this.cube[1][0][2]
-    this.cube[1][0][2] = this.cube[1][2][0]
-    this.cube[1][2][0] = swap
-
-    // Middles on the U Face
-
-    swap = this.cube[1][0][1]
-    this.cube[1][0][1] = this.cube[1][2][1]
-    this.cube[1][2][1] = swap
-
-    swap = this.cube[1][1][0]
-    this.cube[1][1][0] = this.cube[1][1][2]
-    this.cube[1][1][2] = swap
-
-    // Corners on other faces
-
-    swap = this.cube[5][0][2]
-    this.cube[5][0][2] = this.cube[2][0][2]
-    this.cube[2][0][2] = swap
-
-    swap = this.cube[0][0][2]
-    this.cube[0][0][2] = this.cube[4][0][2]
-    this.cube[4][0][2] = swap
-
-    swap = this.cube[5][0][0]
-    this.cube[5][0][0] = this.cube[2][0][0]
-    this.cube[2][0][0] = swap
-
-    swap = this.cube[0][0][0]
-    this.cube[0][0][0] = this.cube[4][0][0]
-    this.cube[4][0][0] = swap
-
-    // Middles on other faces
-
-    swap = this.cube[5][0][1]
-    this.cube[5][0][1] = this.cube[2][0][1]
-    this.cube[2][0][1] = swap
-
-    swap = this.cube[0][0][1]
-    this.cube[0][0][1] = this.cube[4][0][1]
-    this.cube[4][0][1] = swap
+      this.moveM(3)
+    }
   }
 
-  private moveU3 () {
-    let swap: string
+  private moveB (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      let swap: string
 
-    // Corners on the U Face
+      // Corners
 
-    swap = this.cube[1][0][0]
-    this.cube[1][0][0] = this.cube[1][0][2]
-    this.cube[1][0][2] = this.cube[1][2][2]
-    this.cube[1][2][2] = this.cube[1][2][0]
-    this.cube[1][2][0] = swap
+      swap = this.cube[5][0][0]
+      this.cube[5][0][0] = this.cube[5][2][0]
+      this.cube[5][2][0] = this.cube[5][2][2]
+      this.cube[5][2][2] = this.cube[5][0][2]
+      this.cube[5][0][2] = swap
 
-    // Middles on the U Face
+      // Middles
 
-    swap = this.cube[1][0][1]
-    this.cube[1][0][1] = this.cube[1][1][2]
-    this.cube[1][1][2] = this.cube[1][2][1]
-    this.cube[1][2][1] = this.cube[1][1][0]
-    this.cube[1][1][0] = swap
+      swap = this.cube[5][0][1]
+      this.cube[5][0][1] = this.cube[5][1][0]
+      this.cube[5][1][0] = this.cube[5][2][1]
+      this.cube[5][2][1] = this.cube[5][1][2]
+      this.cube[5][1][2] = swap
 
-    // Corners on other faces
+      // Corners on other faces
 
-    swap = this.cube[5][0][2]
-    this.cube[5][0][2] = this.cube[4][0][2]
-    this.cube[4][0][2] = this.cube[2][0][2]
-    this.cube[2][0][2] = this.cube[0][0][2]
-    this.cube[0][0][2] = swap
+      swap = this.cube[1][0][2]
+      this.cube[1][0][2] = this.cube[4][2][2]
+      this.cube[4][2][2] = this.cube[3][2][0]
+      this.cube[3][2][0] = this.cube[0][0][0]
+      this.cube[0][0][0] = swap
 
-    swap = this.cube[5][0][0]
-    this.cube[5][0][0] = this.cube[4][0][0]
-    this.cube[4][0][0] = this.cube[2][0][0]
-    this.cube[2][0][0] = this.cube[0][0][0]
-    this.cube[0][0][0] = swap
+      swap = this.cube[1][0][0]
+      this.cube[1][0][0] = this.cube[4][0][2]
+      this.cube[4][0][2] = this.cube[3][2][2]
+      this.cube[3][2][2] = this.cube[0][2][0]
+      this.cube[0][2][0] = swap
 
-    // Middles on other faces
+      // Middles on other faces
 
-    swap = this.cube[5][0][1]
-    this.cube[5][0][1] = this.cube[4][0][1]
-    this.cube[4][0][1] = this.cube[2][0][1]
-    this.cube[2][0][1] = this.cube[0][0][1]
-    this.cube[0][0][1] = swap
+      swap = this.cube[1][0][1]
+      this.cube[1][0][1] = this.cube[4][1][2]
+      this.cube[4][1][2] = this.cube[3][2][1]
+      this.cube[3][2][1] = this.cube[0][1][0]
+      this.cube[0][1][0] = swap
+    }
   }
 
-  private moveUw1 () {
-    this.moveU1()
+  private moveBw (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      this.moveB(1)
 
-    this.moveE3()
+      this.moveS(3)
+    }
   }
 
-  private moveUw2 () {
-    this.moveU2()
+  private moveL (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      let swap: string
 
-    this.moveE2()
+      // Corners
+
+      swap = this.cube[0][0][0]
+      this.cube[0][0][0] = this.cube[0][2][0]
+      this.cube[0][2][0] = this.cube[0][2][2]
+      this.cube[0][2][2] = this.cube[0][0][2]
+      this.cube[0][0][2] = swap
+
+      // Middles
+
+      swap = this.cube[0][0][1]
+      this.cube[0][0][1] = this.cube[0][1][0]
+      this.cube[0][1][0] = this.cube[0][2][1]
+      this.cube[0][2][1] = this.cube[0][1][2]
+      this.cube[0][1][2] = swap
+
+      // Corners on other faces
+
+      swap = this.cube[2][0][0]
+      this.cube[2][0][0] = this.cube[1][0][0]
+      this.cube[1][0][0] = this.cube[5][2][2]
+      this.cube[5][2][2] = this.cube[3][0][0]
+      this.cube[3][0][0] = swap
+
+      swap = this.cube[2][2][0]
+      this.cube[2][2][0] = this.cube[1][2][0]
+      this.cube[1][2][0] = this.cube[5][0][2]
+      this.cube[5][0][2] = this.cube[3][2][0]
+      this.cube[3][2][0] = swap
+
+      // Middles on other faces
+
+      swap = this.cube[2][1][0]
+      this.cube[2][1][0] = this.cube[1][1][0]
+      this.cube[1][1][0] = this.cube[5][1][2]
+      this.cube[5][1][2] = this.cube[3][1][0]
+      this.cube[3][1][0] = swap
+    }
   }
 
-  private moveUw3 () {
-    this.moveU3()
+  private moveLw (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      this.moveL(1)
 
-    this.moveE()
+      this.moveM(1)
+    }
   }
 
-  private moveD1 () {
-    let swap: string
-
-    // Corners on the D Face
-
-    swap = this.cube[3][0][0]
-    this.cube[3][0][0] = this.cube[3][2][0]
-    this.cube[3][2][0] = this.cube[3][2][2]
-    this.cube[3][2][2] = this.cube[3][0][2]
-    this.cube[3][0][2] = swap
-
-    // Middles on the D Face
-
-    swap = this.cube[3][0][1]
-    this.cube[3][0][1] = this.cube[3][1][0]
-    this.cube[3][1][0] = this.cube[3][2][1]
-    this.cube[3][2][1] = this.cube[3][1][2]
-    this.cube[3][1][2] = swap
-
-    // Corners on other faces
-
-    swap = this.cube[5][2][0]
-    this.cube[5][2][0] = this.cube[4][2][0]
-    this.cube[4][2][0] = this.cube[2][2][0]
-    this.cube[2][2][0] = this.cube[0][2][0]
-    this.cube[0][2][0] = swap
-
-    swap = this.cube[5][2][2]
-    this.cube[5][2][2] = this.cube[4][2][2]
-    this.cube[4][2][2] = this.cube[2][2][2]
-    this.cube[2][2][2] = this.cube[0][2][2]
-    this.cube[0][2][2] = swap
-
-    // Middles on other faces
-
-    swap = this.cube[5][2][1]
-    this.cube[5][2][1] = this.cube[4][2][1]
-    this.cube[4][2][1] = this.cube[2][2][1]
-    this.cube[2][2][1] = this.cube[0][2][1]
-    this.cube[0][2][1] = swap
+  private moveX (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      this.moveL(3)
+      this.moveM(3)
+      this.moveR(1)
+    }
   }
 
-  private moveD2 () {
-    let swap: string
-
-    // Corners on the D Face
-
-    swap = this.cube[3][0][0]
-    this.cube[3][0][0] = this.cube[3][2][2]
-    this.cube[3][2][2] = swap
-
-    swap = this.cube[3][0][2]
-    this.cube[3][0][2] = this.cube[3][2][0]
-    this.cube[3][2][0] = swap
-
-    // Middles on the D Face
-
-    swap = this.cube[3][0][1]
-    this.cube[3][0][1] = this.cube[3][2][1]
-    this.cube[3][2][1] = swap
-
-    swap = this.cube[3][1][0]
-    this.cube[3][1][0] = this.cube[3][1][2]
-    this.cube[3][1][2] = swap
-
-    // Corners on other faces
-
-    swap = this.cube[5][2][2]
-    this.cube[5][2][2] = this.cube[2][2][2]
-    this.cube[2][2][2] = swap
-
-    swap = this.cube[0][2][2]
-    this.cube[0][2][2] = this.cube[4][2][2]
-    this.cube[4][2][2] = swap
-
-    swap = this.cube[5][2][0]
-    this.cube[5][2][0] = this.cube[2][2][0]
-    this.cube[2][2][0] = swap
-
-    swap = this.cube[0][2][0]
-    this.cube[0][2][0] = this.cube[4][2][0]
-    this.cube[4][2][0] = swap
-
-    // Middles on other faces
-
-    swap = this.cube[5][2][1]
-    this.cube[5][2][1] = this.cube[2][2][1]
-    this.cube[2][2][1] = swap
-
-    swap = this.cube[0][2][1]
-    this.cube[0][2][1] = this.cube[4][2][1]
-    this.cube[4][2][1] = swap
-  }
-
-  private moveD3 () {
-    let swap: string
-
-    // Corners on the D Face
-
-    swap = this.cube[3][0][2]
-    this.cube[3][0][2] = this.cube[3][2][2]
-    this.cube[3][2][2] = this.cube[3][2][0]
-    this.cube[3][2][0] = this.cube[3][0][0]
-    this.cube[3][0][0] = swap
-
-    // Middles on the D Face
-
-    swap = this.cube[3][1][2]
-    this.cube[3][1][2] = this.cube[3][2][1]
-    this.cube[3][2][1] = this.cube[3][1][0]
-    this.cube[3][1][0] = this.cube[3][0][1]
-    this.cube[3][0][1] = swap
-
-    // Corners on other faces
-
-    swap = this.cube[5][2][2]
-    this.cube[5][2][2] = this.cube[0][2][2]
-    this.cube[0][2][2] = this.cube[2][2][2]
-    this.cube[2][2][2] = this.cube[4][2][2]
-    this.cube[4][2][2] = swap
-
-    swap = this.cube[5][2][0]
-    this.cube[5][2][0] = this.cube[0][2][0]
-    this.cube[0][2][0] = this.cube[2][2][0]
-    this.cube[2][2][0] = this.cube[4][2][0]
-    this.cube[4][2][0] = swap
-
-    // Middles on other faces
-
-    swap = this.cube[5][2][1]
-    this.cube[5][2][1] = this.cube[0][2][1]
-    this.cube[0][2][1] = this.cube[2][2][1]
-    this.cube[2][2][1] = this.cube[4][2][1]
-    this.cube[4][2][1] = swap
-  }
-
-  private moveDw1 () {
-    this.moveD1()
-
-    this.moveE()
-  }
-
-  private moveDw2 () {
-    this.moveD2()
-
-    this.moveE2()
-  }
-
-  private moveDw3 () {
-    this.moveD3()
-
-    this.moveE3()
+  private moveY (repetitions: number) {
+    for (let i = 0; i < repetitions; i++) {
+      this.moveU(1)
+      this.moveE(3)
+      this.moveD(3)
+    }
   }
 
   move (movement: string) {
     const move = movement.toUpperCase()
 
     if (move === 'M') {
-      this.moveM()
+      this.moveM(1)
     } else if (move === 'M2' || move === 'M2\'') {
-      this.moveM2()
+      this.moveM(2)
     } else if (move === 'M\'') {
-      this.moveM3()
+      this.moveM(3)
     } else if (move === 'E') {
-      this.moveE()
+      this.moveE(1)
     } else if (move === 'E2' || move === 'E2\'') {
-      this.moveE2()
+      this.moveE(2)
     } else if (move === 'E\'') {
-      this.moveE3()
+      this.moveE(3)
     } else if (move === 'S') {
-      this.moveS()
+      this.moveS(1)
     } else if (move === 'S2' || move === 'S2\'') {
-      this.moveS2()
+      this.moveS(2)
     } else if (move === 'S\'') {
-      this.moveS3()
+      this.moveS(3)
     } else if (move === 'U') {
-      this.moveU1()
+      this.moveU(1)
     } else if (move === 'U2' || move === 'U2\'') {
-      this.moveU2()
+      this.moveU(2)
     } else if (move === 'U\'') {
-      this.moveU3()
+      this.moveU(3)
     } else if (move === 'UW') {
-      this.moveUw1()
+      this.moveUw(1)
     } else if (move === 'UW2' || move === 'UW2\'') {
-      this.moveUw2()
+      this.moveUw(2)
     } else if (move === 'UW\'') {
-      this.moveUw3()
+      this.moveUw(3)
     } else if (move === 'D') {
-      this.moveD1()
+      this.moveD(1)
     } else if (move === 'D2' || move === 'D2\'') {
-      this.moveD2()
+      this.moveD(2)
     } else if (move === 'D\'') {
-      this.moveD3()
+      this.moveD(3)
     } else if (move === 'DW') {
-      this.moveDw1()
+      this.moveDw(1)
     } else if (move === 'DW2' || move === 'DW2\'') {
-      this.moveDw2()
+      this.moveDw(2)
     } else if (move === 'DW\'') {
-      this.moveDw3()
+      this.moveDw(3)
+    } else if (move === 'F') {
+      this.moveF(1)
+    } else if (move === 'F2' || move === 'F2\'') {
+      this.moveF(2)
+    } else if (move === 'F\'') {
+      this.moveF(3)
+    } else if (move === 'FW') {
+      this.moveFw(1)
+    } else if (move === 'FW2' || move === 'FW2\'') {
+      this.moveFw(2)
+    } else if (move === 'FW\'') {
+      this.moveFw(3)
+    } else if (move === 'R') {
+      this.moveR(1)
+    } else if (move === 'R2' || move === 'R2\'') {
+      this.moveR(2)
+    } else if (move === 'R\'') {
+      this.moveR(3)
+    } else if (move === 'RW') {
+      this.moveRw(1)
+    } else if (move === 'RW2' || move === 'RW2\'') {
+      this.moveRw(2)
+    } else if (move === 'RW\'') {
+      this.moveRw(3)
+    } else if (move === 'B') {
+      this.moveB(1)
+    } else if (move === 'B2' || move === 'B2\'') {
+      this.moveB(2)
+    } else if (move === 'B\'') {
+      this.moveB(3)
+    } else if (move === 'BW') {
+      this.moveBw(1)
+    } else if (move === 'BW2' || move === 'BW2\'') {
+      this.moveBw(2)
+    } else if (move === 'BW\'') {
+      this.moveBw(3)
+    } else if (move === 'L') {
+      this.moveL(1)
+    } else if (move === 'L2' || move === 'L2\'') {
+      this.moveL(2)
+    } else if (move === 'L\'') {
+      this.moveL(3)
+    } else if (move === 'LW') {
+      this.moveLw(1)
+    } else if (move === 'LW2' || move === 'LW2\'') {
+      this.moveLw(2)
+    } else if (move === 'LW\'') {
+      this.moveLw(3)
+    } else if (move === 'X') {
+      this.moveX(1)
+    } else if (move === 'X2' || move === 'X2\'') {
+      this.moveX(2)
+    } else if (move === 'X\'') {
+      this.moveX(3)
+    } else if (move === 'Y') {
+      this.moveY(1)
+    } else if (move === 'Y2' || move === 'Y2\'') {
+      this.moveY(2)
+    } else if (move === 'Y\'') {
+      this.moveY(3)
     }
   }
 }
@@ -680,6 +595,6 @@ export default Cube
 
 const cube = new Cube()
 
-cube.move('dw\'')
+cube.move('Y2')
 
 console.log(cube.printCube)

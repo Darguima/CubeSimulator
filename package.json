@@ -1,28 +1,37 @@
 {
-  "name": "cubesimulator",
+  "name": "cube-simulator",
   "version": "1.0.0",
-  "description": "A Node JS script to create a virtual Rubik's Cube - represented in the script by a class",
+  "description": "Create your own Rubik's ​​Cube and code it.",
+  "author": "Darguima",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Darguima/CubeSimulator.git"
   },
   "homepage": "https://github.com/Darguima/CubeSimulator#readme",
-  "author": "Darguima",
-  "license": "MIT",
-  "keywords": [
-    "Rubik's Cube",
-    "Rubik's",
-    "Cube",
-    "Rubik's Cube Simulator"
-  ],
   "bugs": {
     "url": "https://github.com/Darguima/CubeSimulator/issues"
   },
-  "main": "index.js",
+  "keywords": [
+    "Cube Simulator",
+    "Rubik's Cube",
+    "Rubik's",
+    "Rubik's Cube Simulator",
+    "Magic Cube",
+    "Cube"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
+    "build": "tsc"
   },
   "devDependencies": {
+    "@types/d3": "^6.2.0",
+    "@types/jsdom": "^16.2.5",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
     "eslint": "^7.13.0",
@@ -32,5 +41,10 @@
     "eslint-plugin-promise": "^4.2.1",
     "ts-node-dev": "^1.0.0",
     "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "d3": "^6.2.0",
+    "fs": "0.0.1-security",
+    "jsdom": "^16.4.0"
   }
 }

@@ -2,6 +2,6 @@ import Cube from '../index'
 
 import fs from 'fs'
 
-export default function exportSvg (this: Cube, svgOutputfile: string) {
-  fs.writeFileSync(svgOutputfile, this.generateSvg())
+export default function exportSvg (this: Cube, svgOutputfile: string, svg: string) {
+  fs.writeFileSync(svgOutputfile, svg)
 }

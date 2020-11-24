@@ -5,7 +5,7 @@ import { getFaceColors, setFaceColor, setFaceColors } from './properties/faceCol
 import * as movesMethods from './methods/movesMethods'
 import move from './methods/move'
 import moves from './methods/moves'
-import generateSvg from './methods/generateSvg'
+import generateSvgAllCube from './methods/generateSvgAllCube'
 import exportSvg from './methods/exportSvg'
 
 class Cube {
@@ -84,7 +84,7 @@ class Cube {
 
   public moves = moves
 
-  public generateSvg = generateSvg
+  public generateSvgAllCube = generateSvgAllCube
 
   public exportSvg = exportSvg
 }

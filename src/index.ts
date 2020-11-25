@@ -6,6 +6,7 @@ import * as movesMethods from './methods/movesMethods'
 import move from './methods/move'
 import moves from './methods/moves'
 import generateSvgAllCube from './methods/generateSvgAllCube'
+import generateSvgOneFace from './methods/generateSvgOneFace'
 import exportSvg from './methods/exportSvg'
 
 class Cube {
@@ -84,6 +85,7 @@ class Cube {
 
   public moves = moves
 
+  public generateSvgOneFace = generateSvgOneFace
   public generateSvgAllCube = generateSvgAllCube
 
   public exportSvg = exportSvg
